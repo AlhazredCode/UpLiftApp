@@ -1,4 +1,5 @@
 // Colors.tsx
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import ThemeContextComponent from './ThemeContext';
 
 export interface ColorPalette {
@@ -8,16 +9,25 @@ export interface ColorPalette {
   warning: string;
   info: string;
   error: string;
-  gray0: string; // Nuevo gray0
-  gray1: string;
-  gray2: string;
-  gray3: string;
-  gray4: string;
-  gray5: string;
-  gray6: string;
-  gray7: string;
-  gray8: string;
+  UpBackground100: string;
+  UpBackground200: string;
+  UpBackground300: string;
+  UpBackground400: string;
+  UpBackground500: string;
+  UpPrimary: string;
+  UpPrimary100: string;
+  UpPrimary200: string;
+  UpPrimary300: string;
+  UpPrimary400: string;
+  UpPrimary500: string;
+  UpSecondary: string;
+  UpSecondary100: string;
+  UpSecondary200: string;
+  UpSecondary300: string;
+  UpSecondary400: string;
+  UpSecondary500: string;
 }
+
 
 export const palette = {
   primary: '#4A44BC',
@@ -31,46 +41,72 @@ export const statusColors = {
   error: '#F44336',
 };
 
-// Añadir #000000 a grayScale
-export const grayScale: string[] = [
-  "#000000", "#121212", "#ffffff1a", "#ffffff33", "#ffffff4d", "#ffffff80", "#ffffffe6", "#f2f2f2", "#ffffffff"
-];
+const upColors = {
+  light: {
+    UpBackground100: '#FFFFFF',
+    UpBackground200: '#F2F2F2',
+    UpBackground300: '#E6E6E6',
+    UpBackground400: '#D9D9D9',
+    UpBackground500: '#CCCCCC',
+    UpPrimary: '#E20000', 
+    UpPrimary100: '#C10000', 
+    UpPrimary200: '#A10000',
+    UpPrimary300: '#800000',
+    UpPrimary400: '#600000',
+    UpPrimary500: '#400000',
+    UpSecondary: '#00008B',
+    UpSecondary100: '#1919A3',
+    UpSecondary200: '#3333B9',
+    UpSecondary300: '#4C4CCD',
+    UpSecondary400: '#6666E0',
+    UpSecondary500: '#7F7FF3', 
+  },
+  dark: {
+    UpBackground100: '#141414',
+    UpBackground200: '#1B1B1B',
+    UpBackground300: '#232323',
+    UpBackground400: '#2B2B2B',
+    UpBackground500: '#333333',
+    UpPrimary: '#E20000',
+    UpPrimary100: '#EA2424',
+    UpPrimary200: '#EC4949',
+    UpPrimary300: '#ED6D6D',
+    UpPrimary400: '#EF9292',
+    UpPrimary500: '#F1B6B6', 
+    UpSecondary: '#00008B', 
+    UpSecondary100: '#6666E0',
+    UpSecondary200: '#7F7FF3',
+    UpSecondary300: '#9999FF',
+    UpSecondary400: '#B2B2FF',
+    UpSecondary500: '#CCCCFF',
+  }
+};
+
+
 
 // Exportar la función getColorPalette
 export const getColorPalette = (colorMode: 'light' | 'dark'): ColorPalette => {
-  const grays = colorMode === 'dark' ? grayScale : grayScale.reverse();
-
   return {
     ...palette,
     ...statusColors,
-    gray0: grays[0], // Asignar gray0
-    gray1: grays[1],
-    gray2: grays[2],
-    gray3: grays[3],
-    gray4: grays[4],
-    gray5: grays[5],
-    gray6: grays[6],
-    gray7: grays[7],
-    gray8: grays[8],
+    ...upColors[colorMode],
   };
 };
 
-interface ColorsProps {
-  colors: ColorPalette;
-}
 
-// Inicializar colorPalette con un valor por defecto 
-let colorPalette: ColorPalette = getColorPalette('light'); // O 'dark' según tu configuración predeterminada
 
-const Colors: React.FC<ColorsProps> = () => {
+let colorPalette: ColorPalette = getColorPalette('dark'); // Inicializa con 'dark'
+
+const Colors: React.FC = () => {
   const { colorMode } = ThemeContextComponent.useTheme();
 
-  // Actualizar colorPalette cuando cambia el modo de color
-  colorPalette = getColorPalette(colorMode);
+  useEffect(() => {
+    colorPalette = getColorPalette(colorMode); // Actualiza colorPalette directamente
+  }, [colorMode]);
 
   return null;
 };
 
-export { colorPalette };
 
-export default Colors; 
+export { colorPalette }; 
+export default Colors;

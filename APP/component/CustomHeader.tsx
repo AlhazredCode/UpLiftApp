@@ -18,7 +18,7 @@ const { width: ww, height: wh } = Dimensions.get("window");
 
 const MenuIcon = () => {
   return (
-    <AppLogo size={0.2} fill='white' />
+    <AppLogo size={0.4} />
   );
 };
 
@@ -45,7 +45,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ typeNavigation }) => {
 
   return (
     <Box
-      bg="$BottleGray8"
+      bg="$UpBackground400"
       px="$4"
       py="$2"
       borderBottomWidth={1}
@@ -62,7 +62,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ typeNavigation }) => {
         </Pressable>
 
         <HStack alignItems="center" space='md'>
-          <Text fontSize="$md" color="$BottleGray2" fontWeight="bold">Restaurant Name</Text>
+          <Text fontSize="$md" color="$UpPrimary500" fontWeight="bold">BMW m5i</Text>
           <Avatar
             size="md"
            

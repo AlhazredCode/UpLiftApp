@@ -7,7 +7,7 @@ import {
   Button, 
   ButtonText 
 } from '../../../components/index';
-import AppLogo from '../../../assets/SVG/AppLogo';
+import Logo from '../../../assets/SVG/Logo';
 // Obtener las dimensiones de la pantalla
 const { width: ww, height: wh } = Dimensions.get("window");
 
@@ -18,35 +18,33 @@ interface WelcomeProps {
 const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Box flex={1} bg="$BottleGray8">
+      <Box flex={1} bg="$UpBackground100">
         <Center h={wh}> 
         
-          <Box w={ww * 0.8} px={ww * 0.05} py={wh * 0.02} rounded={12} bg="$BottleGray6"> 
+          <Box w={ww * 0.8} px={ww * 0.05} py={wh * 0.02} rounded={12} bg="$UpBackground300"> 
           <Center>
-            <AppLogo size={0.4} fill='white'/>
+            <Logo size={1} fill='white'/>
           </Center>
-            <Text textAlign="center" my={wh * 0.005} fontSize={ww * 0.06}> 
-              Opus One?
-            </Text>
-            <Text textAlign="center" my={wh * 0.005} fontSize={ww * 0.035}>
-            THE FUTURE BAR MANAGEMENT
+            
+            <Text textAlign="center" mt={wh * 0.025} fontSize={ww * 0.035}>
+            ELEVATING YPUR CAR EXPERIENCE
             </Text>
             <Box my={wh * 0.02}>
               <Button 
                 onPress={() => navigation.navigate("Login")} 
                 mb={wh * 0.015} 
                 size="lg"
-                bg='$BottleGray3'
+                bg='$UpPrimary400'
               >
-                <ButtonText textAlign="center" color='$BottleGray2'>Login</ButtonText>
+                <ButtonText textAlign="center" color='$UpPrimary'>Login</ButtonText>
               </Button>
               <Button 
                 onPress={() => navigation.navigate("Register")}
                 mb={wh * 0.01} 
                 size="lg"
-                 bg='$BottleGray2'
+                 bg='$UpPrimary100'
               >
-                <ButtonText textAlign="center" color='$BottleGray7'>Sign Up</ButtonText>
+                <ButtonText textAlign="center" color='$UpPrimary500'>Sign Up</ButtonText>
               </Button>
             </Box>
           </Box>

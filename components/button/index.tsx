@@ -248,6 +248,8 @@ const StyledRoot = styled(
         outline: {
           'bg': 'transparent',
           'borderWidth': '$1',
+          'borderColor': '$UpSecondary400',
+      
 
           ':hover': {
             bg: '$background50',
@@ -675,6 +677,8 @@ const StyledText = styled(
           },
         },
       },
+
+
       bold: {
         true: {
           fontWeight: '$bold',

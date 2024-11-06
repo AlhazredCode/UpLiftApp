@@ -1,9 +1,7 @@
 import { AnimationResolver } from '@gluestack-style/animation-resolver';
 import { MotionAnimationDriver } from '@gluestack-style/legend-motion-animation-driver';
 import { createConfig } from '@gluestack-style/react';
-import { colorPalette } from '../APP/context/Colors'; 
-
-
+import { colorPalette as colors } from '../APP/context/Colors';
 export const gluestackUIConfig = createConfig({
   
   aliases: {
@@ -31,21 +29,31 @@ export const gluestackUIConfig = createConfig({
     colors: {
       
       black: "#000000",
-      BottlePrimary: colorPalette.primary,
-      BottleSecondary: colorPalette.secondary,
-      BottleSuccess: colorPalette.success,
-      BottleWarning: colorPalette.warning,
-      BottleInfo: colorPalette.info,
-      BottleError: colorPalette.error,
-      BottleGray0: colorPalette.gray0,
-      BottleGray1: colorPalette.gray1,
-      BottleGray2: colorPalette.gray2,
-      BottleGray3: colorPalette.gray3,
-      BottleGray4: colorPalette.gray4,
-      BottleGray5: colorPalette.gray5,
-      BottleGray6: colorPalette.gray6,
-      BottleGray7: colorPalette.gray7,
-      BottleGray8: colorPalette.gray8,
+      UpBackground100: colors.UpBackground100,
+      UpBackground200: colors.UpBackground200,
+      UpBackground300: colors.UpBackground300,
+      UpBackground400: colors.UpBackground400,
+      UpBackground500: colors.UpBackground500,
+      UpPrimary: colors.UpPrimary,
+      UpPrimary100: colors.UpPrimary100,
+      UpPrimary200: colors.UpPrimary200,
+      UpPrimary300: colors.UpPrimary300,
+      UpPrimary400: colors.UpPrimary400,
+      UpPrimary500: colors.UpPrimary500,
+      UpSecondary: colors.UpSecondary,
+      UpSecondary100: colors.UpSecondary100,
+      UpSecondary200: colors.UpSecondary200,
+      UpSecondary300: colors.UpSecondary300,
+      UpSecondary400: colors.UpSecondary400,
+      UpSecondary500: colors.UpSecondary500,
+
+      // Colores de estado con prefijo "Up"
+      UpPrimaryStatus: colors.primary,
+      UpSecondaryStatus: colors.secondary,
+      UpSuccess: colors.success,
+      UpWarning: colors.warning,
+      UpInfo: colors.info,
+      UpError: colors.error,
       lightGray1: "#C3C3C3",
       lightGray2: "#CACACA",
       lightGray3: "#DCDCDC",

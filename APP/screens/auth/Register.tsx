@@ -23,10 +23,14 @@ import {
 import PagerView from 'react-native-pager-view';
 import Logo from '../../../assets/SVG/Logo';
 const { width: ww, height: wh } = Dimensions.get("window");
+import { useColors } from '../../context/UseColors';
+
+
 
 const BackIcon = () => {
+  const colors = useColors();
   return (
-    <AntDesign name={"arrowleft"} size={ww * 0.12} />
+    <AntDesign name={"arrowleft"} size={ww * 0.12} color={colors.UpPrimary500}/>
   );
 };
 
@@ -46,9 +50,9 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
   };
 
   return (
-    <Box flex={1} bg='$BottleGray8'>
+    <Box flex={1} bg='$UpBackground100'>
       <Center flex={1}>
-        <Box w={ww * 0.9} h={wh * 0.55} justifyContent="center" bg='$BottleGray6' rounded={12}>
+        <Box w={ww * 0.9} h={wh * 0.55} justifyContent="center" bg='$UpBackground400' rounded={12}>
           <FormControl
             h='100%'
             px={ww * 0.1}
@@ -57,7 +61,7 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
             size="md"
           >
             <Center pb={12}>
-              <Logo size={0.4} fill='white' />
+              <Logo size={1} fill='white' />
             </Center>
             <Box height={wh * 0.375} width={ww * 0.7}>
               <PagerView style={{ flex: 1 }} initialPage={0} ref={pagerRef}>
@@ -66,72 +70,72 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
                   <FormControl>
                   <Box>
               <FormControlLabel mb="$1">
-                <FormControlLabelText color="$BottleGray3">Mail</FormControlLabelText>
+                <FormControlLabelText color="$UpPrimary500">Phone</FormControlLabelText>
               </FormControlLabel>
               <Input>
                 <InputField
                   
                   type="text"
-                  placeholder="hello@blackbottle.com"
-                  placeholderTextColor="$BottleGray5" // Ajustar color del placeholder
+                  placeholder="+1 000 000"
+                  placeholderTextColor="$UpSecondary500" // Ajustar color del placeholder
                  
                 />
               </Input>
               <FormControlHelper>
-                <FormControlHelperText color="$BottleGray4">
+                <FormControlHelperText color="$UpBackground400">
                  Please enter a valid email
                 </FormControlHelperText>
               </FormControlHelper>
               <FormControlError>
-                <FormControlErrorText color="$BottleError">
+                <FormControlErrorText color="$UpPrimary500">
                   At least 6 characters are required.
                 </FormControlErrorText>
               </FormControlError>
             </Box>
             <Box>
               <FormControlLabel mb="$1">
-                <FormControlLabelText color="$BottleGray3">Name</FormControlLabelText>
+                <FormControlLabelText color="$UpPrimary500">Name</FormControlLabelText>
               </FormControlLabel>
               <Input>
                 <InputField
                   
                   type="text"
-                  placeholder="Alvaro Celorio"
-                  placeholderTextColor="$BottleGray5" // Ajustar color del placeholder
+                  placeholder="Up Doe"
+                  placeholderTextColor="$UpSecondary500" // Ajustar color del placeholder
                  
                 />
               </Input>
               <FormControlHelper>
-                <FormControlHelperText color="$BottleGray4">
+                <FormControlHelperText color="$UpBackground400">
                  Please enter your full name
                 </FormControlHelperText>
               </FormControlHelper>
               <FormControlError>
-                <FormControlErrorText color="$BottleError">
+                <FormControlErrorText color="$UpPrimary500">
                   At least 6 characters are required.
                 </FormControlErrorText>
               </FormControlError>
             </Box>
             <Box>
               <FormControlLabel mb="$1">
-                <FormControlLabelText color="$BottleGray3">Stablishment Name</FormControlLabelText>
+                <FormControlLabelText color="$UpPrimary500">ID Number</FormControlLabelText>
               </FormControlLabel>
               <Input>
                 <InputField
                   
                   type="text"
-                  placeholder="Cantina La Veinte"
-                  placeholderTextColor="$BottleGray5" // Ajustar color del placeholder
+                  placeholder="000 000 000 000 "
+                  placeholderTextColor="$UpSecondary500" // Ajustar color del placeholder
                  
                 />
               </Input>
               <FormControlHelper>
-                <FormControlHelperText color="$BottleGray4">
-                 Please enter your legal Business Name
+                <FormControlHelperText color="$UpBackground400">
+                 Please enter your legal ID
                 </FormControlHelperText>
               </FormControlHelper>
               <FormControlError>
-                <FormControlErrorText color="$BottleError">
+                <FormControlErrorText color="$UpPrimary500">
                   At least 6 characters are required.
                 </FormControlErrorText>
               </FormControlError>
@@ -141,10 +145,11 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
                   <Button
                     onPress={handleNextPage}
                     size="lg"
-                    bg="$BottleGray3"
+                    
                     mt='auto'
+                    variant='outline'
                   >
-                    <ButtonText textAlign="center" color="$BottleGray2">Next</ButtonText>
+                    <ButtonText textAlign="center" color="$UpSecondary400">Next</ButtonText>
                   </Button>
                 </Box>
 
@@ -153,83 +158,83 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
                 <FormControl>
                   <Box>
               <FormControlLabel mb="$1">
-                <FormControlLabelText color="$BottleGray3">Phone Number</FormControlLabelText>
+                <FormControlLabelText color="$UpPrimary500">User Name</FormControlLabelText>
               </FormControlLabel>
               <Input>
                 <InputField
                   
                   type="text"
-                  placeholder="hello@blackbottle.com"
-                  placeholderTextColor="$BottleGray5" // Ajustar color del placeholder
+                  placeholder="Jhon_Car"
+                  placeholderTextColor="$UpSecondary500" // Ajustar color del placeholder
                  
                 />
               </Input>
               <FormControlHelper>
-                <FormControlHelperText color="$BottleGray4">
+                <FormControlHelperText color="$UpBackground400">
                  Please enter a valid phone Number
                 </FormControlHelperText>
               </FormControlHelper>
               <FormControlError>
-                <FormControlErrorText color="$BottleError">
+                <FormControlErrorText color="$UpError">
                   At least 6 characters are required.
                 </FormControlErrorText>
               </FormControlError>
             </Box>
             <Box>
               <FormControlLabel mb="$1">
-                <FormControlLabelText color="$BottleGray3">Password</FormControlLabelText>
+                <FormControlLabelText color="$UpPrimary500">Password</FormControlLabelText>
               </FormControlLabel>
               <Input>
                 <InputField
                   
                   type="password"
                   placeholder="*****"
-                  placeholderTextColor="$BottleGray5" // Ajustar color del placeholder
+                  placeholderTextColor="$UpSecondary500" // Ajustar color del placeholder
                  
                 />
               </Input>
               <FormControlHelper>
-                <FormControlHelperText color="$BottleGray4">
+                <FormControlHelperText color="$UpBackground400">
                  Please enter a valid email
                 </FormControlHelperText>
               </FormControlHelper>
               <FormControlError>
-                <FormControlErrorText color="$BottleError">
+                <FormControlErrorText color="$UpPrimary400">
                   At least 6 characters are required.
                 </FormControlErrorText>
               </FormControlError>
             </Box>
             <Box>
               <FormControlLabel mb="$1">
-                <FormControlLabelText color="$BottleGray3">Re-enter Password</FormControlLabelText>
+                <FormControlLabelText color="$UpPrimary500">Re-enter Password</FormControlLabelText>
               </FormControlLabel>
               <Input>
                 <InputField
                   
                 type="password"
                   placeholder="*****"
-                  placeholderTextColor="$BottleGray5" // Ajustar color del placeholder
+                  placeholderTextColor="$UpSecondary500" // Ajustar color del placeholder
                  
                 />
               </Input>
               <FormControlHelper>
-                <FormControlHelperText color="$BottleGray4">
+                <FormControlHelperText color="$UpBackground400">
                  Please enter a valid email
                 </FormControlHelperText>
               </FormControlHelper>
               <FormControlError>
-                <FormControlErrorText color="$BottleError">
+                <FormControlErrorText color="$UpError">
                   At least 6 characters are required.
                 </FormControlErrorText>
               </FormControlError>
             </Box>
                   </FormControl>
                   <ButtonGroup justifyContent="space-between"   mt='auto'>
-                    <Button w="48%" h={ww * 0.1} size="lg" onPress={handlePreviousPage} bg="$BottleGray2">
-                      <ButtonText textAlign="center" color="$BottleGray7">Back</ButtonText>
+                    <Button w="48%" h={ww * 0.1} size="lg" onPress={handlePreviousPage} variant='outline' borderColor='$UpPrimary400'>
+                      <ButtonText textAlign="center" color="$UpPrimary400">Back</ButtonText>
                     </Button>
-                    <Button w="48%" h={ww * 0.1} size="lg" onPress={handleNextPage} bg="$BottleGray3">
-                      <ButtonText textAlign="center" color="$BottleGray2">Next</ButtonText>
+                    <Button w="48%" h={ww * 0.1} size="lg" onPress={handleNextPage} variant='outline'>
+                      <ButtonText textAlign="center" color="$UpSecondary400">Next</ButtonText>
                     </Button>
                   </ButtonGroup>
                 </Box>
@@ -238,7 +243,7 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
                 <Box key="3" p="$4">
                   <FormControl>
                     <FormControlLabel mb="$2">
-                      <FormControlLabelText color="$BottleGray2">
+                      <FormControlLabelText color="$UpPrimary200">
                         <Text>Confirm Password</Text>
                       </FormControlLabelText>
                     </FormControlLabel>
@@ -246,16 +251,16 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
                       <InputField
                         type="password"
                         placeholder="*****"
-                        placeholderTextColor="$BottleGray4"
+                        placeholderTextColor="$UpPrimary400"
                       />
                     </Input>
                   </FormControl>
                   <ButtonGroup justifyContent="space-between">
-                    <Button w="48%" h={ww * 0.1} size="lg" onPress={handlePreviousPage} bg="$BottleGray2">
-                      <ButtonText textAlign="center" color="$BottleGray7">Back</ButtonText>
+                    <Button w="48%" h={ww * 0.1} size="lg" onPress={handlePreviousPage} bg="$UpPrimary200">
+                      <ButtonText textAlign="center" color="$UpBackground200">Back</ButtonText>
                     </Button>
-                    <Button w="48%" h={ww * 0.1} size="lg" onPress={() => navigation.navigate("MainStack")} bg="$BottleGray3">
-                      <ButtonText textAlign="center" color="$BottleGray2">Create</ButtonText>
+                    <Button w="48%" h={ww * 0.1} size="lg" onPress={() => navigation.navigate("MainStack")} bg="$UpPrimary300">
+                      <ButtonText textAlign="center" color="$UpPrimary200">Create</ButtonText>
                     </Button>
                   </ButtonGroup>
                 </Box>
@@ -274,7 +279,7 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
           position="absolute"
           bottom={0}
           mb={wh * 0.1}
-          bg="$BottleGray3" // Añadir color de fondo
+          bg="$UpPrimary100" // Añadir color de fondo
         >
           <Icon as={BackIcon} />
         </Pressable>

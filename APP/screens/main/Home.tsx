@@ -2,17 +2,19 @@ import { View, Text } from "react-native";
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { AntDesign } from "@expo/vector-icons";
+import Account from "./drawer/Account";
+import UpMain from "./UpMain";
+import Help from "./drawer/Help";
+import Locations from "./drawer/Locations";
+import Membership from "./drawer/Membership";
+import Notifications from "./drawer/Notifications";
+import Vehicle from "./drawer/Vehicle";
+import Book from "./drawer/Book";
 
 // Importa los componentes desde la carpeta drawer (asegúrate de que existan)
-import MainMenu from "./drawer/MainMenu";
-import Orders from "./drawer/Orders";
-import Dashboard from "./drawer/Dashboard";
-import Barlog from "./drawer/Barlog";
-import Guests from "./drawer/Guests";
-import InvoiceScanner from "./drawer/InvoiceScanner";
-import BarHealth from "./drawer/BarHealth";
-import Sales from "./drawer/Sales";
+
 import CustomHeader from "../../component/CustomHeader";
+
 const Drawer = createDrawerNavigator();
 const Home = () => {
   return (
@@ -30,8 +32,8 @@ const Home = () => {
     }}
     >
       <Drawer.Screen
-        name="Dashboard"
-        component={Dashboard}
+        name="UpMain"
+        component={UpMain}
         options={{
           header: () => <CustomHeader typeNavigation={"primary"} />,
           drawerLabel: "Dashboard",
@@ -41,24 +43,24 @@ const Home = () => {
         }}
       />
       <Drawer.Screen
-        name="MainMenu"
-        component={MainMenu}
+        name="Membership"
+        component={Membership}
         options={{
           drawerLabel: "Main Menu",
           drawerIcon: () => <AntDesign name="book" size={24} color="black" />,
         }}
       />
       <Drawer.Screen
-        name="Barlog"
-        component={Barlog}
+        name="Book"
+        component={Book}
         options={{
           drawerLabel: "Barlog",
           drawerIcon: () => <AntDesign name="book" size={24} color="black" />,
         }}
       />
       <Drawer.Screen
-        name="Orders"
-        component={Orders}
+        name="Notifications"
+        component={Notifications}
         options={{
           drawerLabel: "Orders",
           drawerIcon: () => (
@@ -67,32 +69,32 @@ const Home = () => {
         }}
       />
       <Drawer.Screen
-        name="Guest"
-        component={Guests}
+        name="Vehicle"
+        component={Vehicle}
         options={{
           drawerLabel: "Guests",
           drawerIcon: () => <AntDesign name="user" size={24} color="black" />,
         }}
       />
       <Drawer.Screen
-        name="InvoiceScanner"
-        component={InvoiceScanner}
+        name="Locations"
+        component={Locations}
         options={{
           drawerLabel: "Invoice Scanner",
           drawerIcon: () => <AntDesign name="scan1" size={24} color="black" />,
         }}
       />
       <Drawer.Screen
-        name="BarHealth"
-        component={BarHealth}
+        name="Account"
+        component={Account}
         options={{
           drawerLabel: "Bar Health",
           drawerIcon: () => <AntDesign name="heart" size={24} color="black" />,
         }}
       />
       <Drawer.Screen
-        name="Sales"
-        component={Sales}
+        name="Help"
+        component={Help}
         options={{
           drawerLabel: "Sales",
           drawerIcon: () => (

@@ -1,25 +1,13 @@
 // useColors.tsx
-import ThemeContextComponent from './ThemeContext';
-import { ColorPalette, palette, statusColors, grayScale } from './Colors'; // Importar ColorPalette
+import { useState, useEffect } from 'react';
+import { colorPalette, ColorPalette } from './Colors';
 
-const useColors = (): ColorPalette => {
-  const { colorMode } = ThemeContextComponent.useTheme();
+export const useColors = (): ColorPalette => {
+  const [colors, setColors] = useState<ColorPalette>(colorPalette);
 
-  const grays = colorMode === 'dark' ? grayScale : grayScale.reverse();
+  useEffect(() => {
+    setColors(colorPalette); // Actualiza el estado cuando colorPalette cambia
+  }, [colorPalette]);
 
-  return {
-    ...palette,
-    ...statusColors,
-    gray0: grays[0], // Añadir gray0
-    gray1: grays[1],
-    gray2: grays[2],
-    gray3: grays[3],
-    gray4: grays[4],
-    gray5: grays[5],
-    gray6: grays[6],
-    gray7: grays[7],
-    gray8: grays[8], // Añadir gray8
-  };
+  return colors;
 };
-
-export default useColors;
