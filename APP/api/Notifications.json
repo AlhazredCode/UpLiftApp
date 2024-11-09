@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "title": "Welcome to Squeaky Clean Car Wash!",
+      "description": "Thanks for signing up! Enjoy 10% off your first wash.",
+      "image": "welcome.jpg",
+      "timestamp": "2024-07-26T10:00:00Z",
+      "read": false
+    },
+    {
+      "id": 2,
+      "title": "Rainy Day Special!",
+      "description": "Get a free undercarriage wash with any premium wash today!",
+      "image": "rain.jpg",
+      "timestamp": "2024-07-26T12:30:00Z",
+      "read": false
+    },
+    {
+      "id": 3,
+      "title": "Your car is due for a wash!",
+      "description": "It's been a while.  Schedule your next wash and save 5%.",
+      "image": "dirtycar.jpg",
+      "timestamp": "2024-07-27T09:00:00Z",
+      "read": false
+    },
+    {
+      "id": 4,
+      "title": "New Ceramic Coating Available!",
+      "description": "Protect your car's paint with our new ceramic coating service.",
+      "image": "ceramic.jpg",
+      "timestamp": "2024-07-28T14:00:00Z",
+      "read": false
+    },
+    {
+      "id": 5,
+      "title": "Feedback Requested!",
+      "description": "Tell us about your recent visit and help us improve.",
+      "image": "feedback.jpg",
+      "timestamp": "2024-07-29T11:00:00Z",
+      "read": false
+    },
+    {
+      "id": 6,
+      "title": "Loyalty Program Reminder",
+      "description": "You're only 2 washes away from a free wash! Keep it clean!",
+      "image": "loyalty.jpg",
+      "timestamp": "2024-07-30T16:00:00Z",
+      "read": false
+    },
+    {
+      "id": 7,
+      "title": "Limited Time Offer: Interior Detailing Discount!",
+      "description": "Get 20% off interior detailing this week only!",
+      "image": "interior.jpg",
+      "timestamp": "2024-07-31T08:30:00Z",
+      "read": false
+    },
+    {
+      "id": 8,
+      "title": "Appointment Reminder",
+      "description": "Your car wash appointment is scheduled for tomorrow at 9:00 AM.",
+      "image": "calendar.jpg",
+      "timestamp": "2024-08-01T18:00:00Z",
+      "read": false
+    },
+    {
+      "id": 9,
+      "title": "Refer a Friend!",
+      "description": "Give your friends a free wash and get one for yourself!",
+      "image": "refer.jpg",
+      "timestamp": "2024-08-02T13:00:00Z",
+      "read": false
+    },
+    {
+      "id": 10,
+      "title": "We're Open Late!",
+      "description": "Get your car washed tonight - we're open until 9 PM.",
+      "image": "openlate.jpg",
+      "timestamp": "2024-08-03T20:00:00Z",
+      "read": false
+    }
+  ]
