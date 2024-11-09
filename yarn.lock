@@ -2570,13 +2570,21 @@
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.3.31.tgz#28dd802a0787bb03fc0e5be296daf1804dbebbcf"
   integrity sha512-bUzP4Awlljx5RKEExw8WYtif8EuQni2glDaieYROKTnaxsu9kEIA515sXQgUDZU4Ob12VoL7+z70uO3qrlfXcQ==
 
-"@react-navigation/material-top-tabs@^6.6.14":
-  version "6.6.14"
-  resolved "https://registry.yarnpkg.com/@react-navigation/material-top-tabs/-/material-top-tabs-6.6.14.tgz#48877ba5e1038d089439fede39ac5aab99c13c28"
-  integrity sha512-kfNQt3BInQusEc8A+PDWaKmRQNaCrSqngcOQwUe1uNizJdZJEFdfaInivtBFW2LcQqtzgIHK/am2TgK0Pos6og==
+"@react-navigation/elements@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-2.0.0.tgz#ab8fa606de0812b94ea202d64b23621c75f6a4c0"
+  integrity sha512-kt2Q5WLJ9jjJMA/Jt8S3z3Jub2V+HIJ2LM4z+dZqL00FVsTfa4rSk3BTktI3MmBiUCgzUo6jPOxkxsUbjoL/ig==
   dependencies:
     color "^4.2.3"
-    warn-once "^0.1.0"
+
+"@react-navigation/material-top-tabs@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@react-navigation/material-top-tabs/-/material-top-tabs-7.0.1.tgz#8a5ccd3abc2b5fdcde5c13b082069a1e46a4090b"
+  integrity sha512-Fozf/GT1/B1YY22QYKMMqeisj+yaHGS1/SBGGTre5ClM3uM7U2NTP6YeibIClB+12b/OFiB8w2GiKBz5Y+bb0w==
+  dependencies:
+    "@react-navigation/elements" "^2.0.0"
+    color "^4.2.3"
+    react-native-tab-view "^4.0.1"
 
 "@react-navigation/native@^6.1.18":
   version "6.1.18"
@@ -6936,6 +6944,13 @@ react-native-tab-view@^3.5.2:
   integrity sha512-nE5WqjbeEPsWQx4mtz81QGVvgHRhujTNIIZiMCx3Bj6CBFDafbk7XZp9ocmtzXUQaZ4bhtVS43R4FIiR4LboJw==
   dependencies:
     use-latest-callback "^0.1.5"
+
+react-native-tab-view@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-4.0.1.tgz#666f89ed8758be9d1b956bbcc031f604bed2dd6a"
+  integrity sha512-9J/mcYfZ3o8yHYR0VxOpdgnU2gPkiCBxNVMtN0GpHtDshGhaczoIeu3Mn4jQKS73GQ2T8/4NH1LHU/Ue0ZF0jQ==
+  dependencies:
+    use-latest-callback "^0.2.1"
 
 react-native@0.74.5:
   version "0.74.5"

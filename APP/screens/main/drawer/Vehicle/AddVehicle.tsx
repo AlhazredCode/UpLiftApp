@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Membership = () => {
+const AddVehicle = () => {
   return (
     <View>
-      <Text>Membership</Text>
+      <Text>AddVehicle</Text>
     </View>
   )
 }
 
-export default Membership
+export default AddVehicle

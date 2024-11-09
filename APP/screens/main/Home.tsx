@@ -5,10 +5,9 @@ import { AntDesign } from "@expo/vector-icons";
 import Account from "./drawer/Account";
 import UpMain from "./UpMain";
 import Help from "./drawer/Help";
-import Locations from "./drawer/Locations";
-import Membership from "./drawer/Membership";
-import Notifications from "./drawer/Notifications";
-import Vehicle from "./drawer/Vehicle";
+import Locations from "./drawer/Locations/Locations";
+import Notifications from "./drawer/Notifications/Notifications";
+import Vehicle from "./drawer/Vehicle/Vehicle";
 import Book from "./drawer/Book";
 import { useColors } from "../../context/UseColors";
 import { Box } from "../../../components";
@@ -67,18 +66,12 @@ const Home = () => {
           ),
         }}
       />
-      <Drawer.Screen
-        name="Membership"
-        component={Membership}
-        options={{
-          drawerLabel: "Membership",
-          drawerIcon: () => <AntDesign name="Safety" size={24} color={colors.UpSecondary400} />,
-        }}
-      />
+     
       <Drawer.Screen
         name="Book"
         component={Book}
         options={{
+          header: () => <CustomHeader typeNavigation={"primary"} />,
           drawerLabel: "Book",
           drawerIcon: () => <AntDesign name="book" size={24} color={colors.UpSecondary400} />,
         }}
@@ -87,6 +80,7 @@ const Home = () => {
         name="Notifications"
         component={Notifications}
         options={{
+          header: () => <CustomHeader typeNavigation={"primary"} />,
           drawerLabel: "Notifications",
           drawerIcon: () => (
             <AntDesign name="notification" size={24} color={colors.UpSecondary400} />
@@ -97,7 +91,8 @@ const Home = () => {
         name="Vehicle"
         component={Vehicle}
         options={{
-          drawerLabel: "Vehicle",
+          header: () => <CustomHeader typeNavigation={"primary"} />,
+          drawerLabel: "Vehicles & Memberships",
           drawerIcon: () => <AntDesign name="car" size={24} color={colors.UpSecondary400} />,
         }}
       />
@@ -105,6 +100,7 @@ const Home = () => {
         name="Locations"
         component={Locations}
         options={{
+          header: () => <CustomHeader typeNavigation={"primary"} />,
           drawerLabel: "Locations",
           drawerIcon: () => <AntDesign name="shrink" size={24} color={colors.UpSecondary400} />,
         }}
@@ -113,6 +109,7 @@ const Home = () => {
         name="Account"
         component={Account}
         options={{
+          header: () => <CustomHeader typeNavigation={"primary"} />,
           drawerLabel: "Account",
           drawerIcon: () => <AntDesign name="user" size={24} color={colors.UpSecondary400} />,
         }}
@@ -121,6 +118,7 @@ const Home = () => {
         name="Help"
         component={Help}
         options={{
+          header: () => <CustomHeader typeNavigation={"primary"} />,
           drawerLabel: "Help",
           drawerIcon: () => (
             <AntDesign name="questioncircleo" size={24} color={colors.UpSecondary400} />

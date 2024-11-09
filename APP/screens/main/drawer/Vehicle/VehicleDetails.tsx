@@ -1,12 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Vehicle = () => {
+
+const VehicleDetails = () => {
   return (
     <View>
-      <Text>Vehicle</Text>
+      <Text>VehicleDetails</Text>
     </View>
   )
 }
 
-export default Vehicle
+export default VehicleDetails
