@@ -1889,6 +1889,13 @@
   dependencies:
     semver "^7.3.5"
 
+"@ouedraogof/react-native-progress-steps@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@ouedraogof/react-native-progress-steps/-/react-native-progress-steps-1.0.3.tgz#995ea3179a9c9406cacc855361b2d5f6479d3cfd"
+  integrity sha512-sjSWcqelLyl4bxdOdO/u5npJikDR6HUVMrOuXA/CN1dCp1dbajn0mwE3bKi39pEPP7S+Nyj38mt4BBOvFa3IoA==
+  dependencies:
+    lodash "^4.17.11"
+
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
@@ -6782,7 +6789,7 @@ prompts@^2.3.2, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6894,14 +6901,6 @@ react-native-pager-view@6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.3.0.tgz#7e734e84b1692f877591335373f6fd92f0d67aa6"
   integrity sha512-ufJOoVa9pFL1J/yb4hpsCqp8n1qTlcF5VvwqvCacHX//D7hSeRscsiIXg1u1pXNWwllvACb+mqxec/3Uj2mxrA==
-
-react-native-progress-steps@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/react-native-progress-steps/-/react-native-progress-steps-1.3.4.tgz#4222601c4cee36fbafd1058db74bc1831843a5c7"
-  integrity sha512-LSkaCVjYC2lYXLuvUZBYjQKYNheth5EqyXT+Vo2F54OMgdYt+nPD/xt9peWzxCGUfeQDUaXwfRy+kpAb+ptSkA==
-  dependencies:
-    lodash "^4.17.11"
-    prop-types "^15.6.2"
 
 react-native-reanimated@~3.10.1:
   version "3.10.1"

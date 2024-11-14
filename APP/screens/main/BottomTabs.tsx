@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import React, { useContext } from 'react';
+import { Dimensions } from 'react-native';
+import React from 'react';
 import { Box, Button, ButtonGroup, Icon } from '../../../components';
 import { AntDesign } from '@expo/vector-icons';
 import { useColors } from '../../context/UseColors';
-import { CurrentPageIndexContext } from './UpMain';
 import PagerView from 'react-native-pager-view';
 
 const { width: ww, height: wh } = Dimensions.get('window');
@@ -26,49 +25,47 @@ const NotificationsIcon = ({ active }: { active: boolean }) => {
   return <AntDesign name="bulb1" size={ww * 0.06} color={iconColor} />;
 };
 
-interface BottomTabsProps {  
-    pagerRef: PagerView | null;
-  }
+interface BottomTabsProps {
+  pagerRef: React.RefObject<PagerView>;
+  setCurrentPage: (page: number) => void;
+  currentPage: number;
+}
 
-const BottomTabs: React.FC<BottomTabsProps> = ({ pagerRef }) => { 
-  const { currentPage, setCurrentPage } = useContext(CurrentPageIndexContext);
+const BottomTabs: React.FC<BottomTabsProps> = ({ pagerRef, setCurrentPage, currentPage }) => {
   const colors = useColors();
+
+  const handleTabPress = (index: number) => {
+    if (pagerRef.current) {
+      pagerRef.current.setPage(index);
+      setCurrentPage(index);
+    }
+  };
 
   return (
     <Box sx={{ position: 'absolute', bottom: 0, mb: wh * 0.04, width: '100%' }} justifyContent="center">
-    <ButtonGroup justifyContent="center">
-      <Button
-        w="30%"
-        h={ww * 0.1}
-        size="md"
-        variant="link"
-        borderColor={currentPage === 0 ? colors.UpPrimary100 : colors.UpPrimary400}
-        onPress={() => setCurrentPage(0)}
-      >
-        <Icon as={() => <HomeIcon active={currentPage === 0} />} />
-      </Button>
-      <Button
-        w="30%"
-        h={ww * 0.1}
-        size="md"
-        variant="link"
-        borderColor={currentPage === 1 ? colors.UpPrimary100 : colors.UpPrimary400}
-        onPress={() => setCurrentPage(1)}
-      >
-        <Icon as={() => <CarIcon active={currentPage === 1} />} /> 
-      </Button>
-      <Button
-        w="30%"
-        h={ww * 0.1}
-        size="md"
-        variant="link"
-        borderColor={currentPage === 2 ? colors.UpPrimary100 : colors.UpPrimary400}
-        onPress={() => setCurrentPage(2)}
-      >
-        <Icon as={() => <NotificationsIcon active={currentPage === 2} />} /> 
-      </Button>
-    </ButtonGroup>
-  </Box>
+      <ButtonGroup justifyContent="center">
+        {[0, 1, 2].map((index) => (
+          <Button
+            key={index}
+            w="30%"
+            h={ww * 0.1}
+            size="md"
+            variant="link"
+            borderColor={currentPage === index ? colors.UpPrimary100 : colors.UpPrimary400}
+            onPress={() => handleTabPress(index)}
+          >
+            <Icon as={() => {
+              switch (index) {
+                case 0: return <HomeIcon active={currentPage === index} />;
+                case 1: return <CarIcon active={currentPage === index} />;
+                case 2: return <NotificationsIcon active={currentPage === index} />;
+                default: return null; // Manejar casos por defecto si es necesario
+              }
+            }} />
+          </Button>
+        ))}
+      </ButtonGroup>
+    </Box>
   );
 };
 

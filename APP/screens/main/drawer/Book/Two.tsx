@@ -1,12 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Book = () => {
+
+
+const Two: React.FC = () => {
   return (
     <View>
-      <Text>Book</Text>
+      <Text>Two</Text>
     </View>
   )
 }
 
-export default Book
+export default Two

@@ -8,7 +8,7 @@ import Help from "./drawer/Help";
 import Locations from "./drawer/Locations/Locations";
 import Notifications from "./drawer/Notifications/Notifications";
 import Vehicle from "./drawer/Vehicle/Vehicle";
-import Book from "./drawer/Book";
+import Book from "./drawer/Book/Book";
 import { useColors } from "../../context/UseColors";
 import { Box } from "../../../components";
 import { Image } from "../../../components";
@@ -71,7 +71,7 @@ const Home = () => {
         name="Book"
         component={Book}
         options={{
-          header: () => <CustomHeader typeNavigation={"primary"} />,
+          header: () => <CustomHeader typeNavigation={"secondary"} />,
           drawerLabel: "Book",
           drawerIcon: () => <AntDesign name="book" size={24} color={colors.UpSecondary400} />,
         }}
@@ -80,7 +80,7 @@ const Home = () => {
         name="Notifications"
         component={Notifications}
         options={{
-          header: () => <CustomHeader typeNavigation={"primary"} />,
+          header: () => <CustomHeader typeNavigation={"secondary"} />,
           drawerLabel: "Notifications",
           drawerIcon: () => (
             <AntDesign name="notification" size={24} color={colors.UpSecondary400} />
@@ -91,7 +91,7 @@ const Home = () => {
         name="Vehicle"
         component={Vehicle}
         options={{
-          header: () => <CustomHeader typeNavigation={"primary"} />,
+          header: () => <CustomHeader typeNavigation={"secondary"} />,
           drawerLabel: "Vehicles & Memberships",
           drawerIcon: () => <AntDesign name="car" size={24} color={colors.UpSecondary400} />,
         }}
@@ -100,7 +100,7 @@ const Home = () => {
         name="Locations"
         component={Locations}
         options={{
-          header: () => <CustomHeader typeNavigation={"primary"} />,
+          header: () => <CustomHeader typeNavigation={"secondary"} />,
           drawerLabel: "Locations",
           drawerIcon: () => <AntDesign name="shrink" size={24} color={colors.UpSecondary400} />,
         }}
@@ -109,7 +109,7 @@ const Home = () => {
         name="Account"
         component={Account}
         options={{
-          header: () => <CustomHeader typeNavigation={"primary"} />,
+          header: () => <CustomHeader typeNavigation={"secondary"} />,
           drawerLabel: "Account",
           drawerIcon: () => <AntDesign name="user" size={24} color={colors.UpSecondary400} />,
         }}
@@ -118,7 +118,7 @@ const Home = () => {
         name="Help"
         component={Help}
         options={{
-          header: () => <CustomHeader typeNavigation={"primary"} />,
+          header: () => <CustomHeader typeNavigation={"secondary"} />,
           drawerLabel: "Help",
           drawerIcon: () => (
             <AntDesign name="questioncircleo" size={24} color={colors.UpSecondary400} />
